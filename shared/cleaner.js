@@ -82,7 +82,7 @@
     const cbs = $$('.task-checkbox'), btn = $('#submitJobBtn');
     const save = patch => { const o = job() || {}; ps.set({job1:{status:'active', ...o, checks:cbs.map(c => c.checked), photo:!$('#afterPreview').classList.contains('hidden'), ...patch}}); };
     function paintStatus() { const s = jstatus(); if (s !== 'review' && s !== 'paid') return; btn.disabled = true;
-      btn.innerHTML = `<span class="material-symbols-outlined text-[22px]">check_circle</span><span>${s === 'paid' ? 'Escrow Released ₱450 ✓' : 'Submitted! Waiting for Maria to approve'}</span>`;
+      btn.innerHTML = `<span class="material-symbols-outlined text-[22px]">check_circle</span><span>${s === 'paid' ? 'Escrow Released ₱382.50 ✓' : 'Submitted! Waiting for Maria to approve'}</span>`;
       btn.classList.replace('bg-primary', 'bg-secondary'); $$('.grid-cols-5 > div').forEach((d, i) => { d.classList.remove('animate-pulse', 'bg-surface-container-highest'); d.classList.add(s === 'review' && i === 4 ? 'bg-surface-container-highest' : 'bg-secondary'); });
       sub('Step 3 of 5', s === 'paid' ? 'Step 5 of 5' : 'Step 4 of 5'); sub('Step 4 of 5', s === 'paid' ? 'Step 5 of 5' : 'Step 4 of 5'); sub('In Progress (Active Job)', s === 'paid' ? 'Completed & Paid' : 'Awaiting Client Approval'); if (s === 'paid') sub('Escrow Secured', 'Escrow Released'); }
     const j = job(); if (j) { cbs.forEach((c, i) => { c.checked = !!(j.checks || [])[i]; }); updateChecklistStats(); if (j.photo) triggerMockCamera(); }
@@ -103,7 +103,7 @@
     const rowTitle = $$('span').find(s => s.textContent.trim() === 'Backyard & Drainage Cleanup'), row = rowTitle.closest('.justify-between');
     function render() { const w = W(); const big = $$('span').find(s => /^₱[\d,]+\.\d{2}$/.test(s.textContent.trim()) && s.className.includes('font-display')); if (big) big.textContent = money(w.avail);
       if (paid()) { escRow.lastElementChild.textContent = '₱0.00'; escLab.nextElementSibling.textContent = 'No jobs under review'; const pill = $$('span', row).find(s => /In Escrow/i.test(s.textContent)); if (pill) { pill.textContent = 'Released'; pill.className = pill.className.replace(/bg-\S+|text-\S+/g, '') + ' bg-secondary-container text-on-secondary-container'; }
-        sub('₱4,850', '₱5,300'); sub('11', '12'); sub('Progress: 2 of 5 completed', 'Progress: 3 of 5 completed'); sub('40%', '60%'); $$('[style*="width: 40%"]').forEach(e => { e.style.width = '60%'; }); }
+        sub('₱4,850', '₱5,232.50'); sub('11', '12'); sub('Progress: 2 of 5 completed', 'Progress: 3 of 5 completed'); sub('40%', '60%'); $$('[style*="width: 40%"]').forEach(e => { e.style.width = '60%'; }); }
       $$('[data-hist]').forEach(e => e.remove());
       row.insertAdjacentHTML('beforebegin', w.hist.map(h => `<div data-hist="1" class="${row.className}"><div class="flex items-center gap-space-sm min-w-0"><div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary shrink-0"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span></div><div class="flex flex-col min-w-0"><span class="font-label-lg text-label-lg text-primary truncate">${esc(h.t)}</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate">GCash 0917 • • • 442 • ${new Date(h.at).toLocaleTimeString('en-PH', {hour:'numeric', minute:'2-digit'})}</span></div></div><div class="flex flex-col items-end shrink-0"><span class="font-label-lg text-label-lg text-on-surface font-bold">−${money(h.amt)}</span><span class="font-label-sm text-label-sm text-secondary">Sent</span></div></div>`).join('')); }
     render();
@@ -117,7 +117,7 @@
 
   /* ---- Partner profile ---- */
   if (PAGE === 'profile') {
-    if (jstatus() === 'paid') sub('₱42,500', '₱42,950');
+    if (jstatus() === 'paid') sub('₱42,500', '₱42,882.50');
     function sheet() { if ($('#cl-sheet')) return; const s = document.createElement('div'); s.id = 'cl-sheet'; s.className = 'fixed inset-0 z-[90] bg-black/40 flex items-end';
       const row = (a, ic, t) => `<button data-a="${a}" class="w-full h-12 rounded-xl bg-surface-container flex items-center gap-3 px-4 font-label-lg text-label-lg text-on-surface"><span class="material-symbols-outlined">${ic}</span>${t}</button>`;
       s.innerHTML = `<div class="w-full bg-surface-container-lowest rounded-t-3xl p-space-md flex flex-col gap-2"><div class="flex items-center justify-between mb-1"><h3 class="font-headline-sm text-headline-sm text-primary font-bold">Partner settings</h3><button data-x class="material-symbols-outlined">close</button></div>${row('online', 'power_settings_new', isOn() ? 'Go Offline' : 'Go Online')}${row('customer', 'swap_horiz', 'Switch to Customer mode')}${row('logout', 'logout', 'Log out &amp; reset demo')}</div>`;

@@ -36,7 +36,7 @@ function jobCard() {   // Kuya Juan's in-progress job: reflects the cleaner app'
     : `<div id="rel" class="rounded-xl bg-secondary-container/40 p-3 text-sm"><span class="font-label-lg">Paid ₱450 via ${ps.get().pay || 'GCash'}</span> • Escrow released to Kuya Juan D.</div>`;
   const btns = c.querySelector('.pt-2.flex.items-center.gap-2'); if (btns) btns.insertAdjacentHTML('beforebegin', html); }
 function releasePay() { const s = ps.get(), w = Object.assign({avail:1450, hist:[]}, s.wallet || {});
-  ps.set({job1:{...s.job1, status:'paid'}, wallet:{...w, avail:w.avail + 450}, cn:[{to:'cleaner', t:'Maria released ₱450 for Backyard & Drainage Cleanup', at:Date.now()}, ...(s.cn || [])]});
+  ps.set({job1:{...s.job1, status:'paid'}, wallet:{...w, avail:w.avail + 382.5}, cn:[{to:'cleaner', t:'Maria released ₱450 for Backyard & Drainage Cleanup. ₱382.50 added to your wallet after the 15% PureSpace fee.', at:Date.now()}, ...(s.cn || [])]});
   jobCard(); toast('₱450 released to Kuya Juan D. — thank you!'); }
 const _draw = draw; draw = () => { _draw(); jobCard(); };
 window.__req = null;

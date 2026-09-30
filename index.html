@@ -29,29 +29,27 @@
 </head>
 <body>
 <script>
-  const START = {customer: 'customer/1._welcome_login_interactive/code.html', cleaner: 'cleaner/cleaner_1_job_board_leads/code.html'};
-  const role = new URLSearchParams(location.search).get('role') === 'cleaner' ? 'cleaner' : 'customer';
+  // Everyone starts at the shared login page; it routes to the Customer or Cleaner pages from there.
+  const LOGIN = 'customer/1._welcome_login_interactive/code.html';
   // On real phones (and narrow windows) skip the device frame and open the app directly.
-  if (Math.min(screen.width, innerWidth) < 600) location.replace(START[role]);
+  if (Math.min(screen.width, innerWidth) < 600) location.replace(LOGIN);
 </script>
 <div class="phone"><iframe id="app" title="PureSpace app" src="about:blank"></iframe></div>
 <aside>
   <h1>Pure<span>Space</span></h1>
   <p>Cebu's community cleaning marketplace, as an interactive mobile demo with two dashboards that talk to each other.</p>
-  <div class="roles"><button id="r-customer" data-role="customer">Customer app</button><button id="r-cleaner" data-role="cleaner">Cleaner app</button></div>
   <ul>
-    <li><b>Customer:</b> post a request, accept a bid, chat, release payment</li>
-    <li><b>Cleaner:</b> bid on leads, complete the job, cash out</li>
-    <li>Switch between them anytime. Progress is saved in this browser.</li>
+    <li><b>Household:</b> log in, post a request, accept a bid, chat, release payment</li>
+    <li><b>Clean &amp; Earn:</b> pick it on the login screen to land on the cleaner dashboard, bid on leads, complete the job, cash out</li>
+    <li>Log out from either profile to come back to the login. Progress is saved in this browser.</li>
   </ul>
   <button id="reset" class="ghost">Restart demo</button>
 </aside>
 <script>
   const app = document.getElementById('app');
-  const open = r => { app.src = START[r]; document.querySelectorAll('.roles button').forEach(b => b.classList.toggle('on', b.dataset.role === r)); };
-  document.querySelectorAll('.roles button').forEach(b => b.onclick = () => open(b.dataset.role));
-  document.getElementById('reset').onclick = () => { try { localStorage.removeItem('ps'); } catch (e) {} open(document.querySelector('.roles .on').dataset.role); };
-  open(role);
+  const open = () => { app.src = LOGIN; };
+  document.getElementById('reset').onclick = () => { try { localStorage.removeItem('ps'); } catch (e) {} open(); };
+  open();
 </script>
 </body>
 </html>

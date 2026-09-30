@@ -255,7 +255,7 @@
           signInIcon.classList.remove('animate-spin');
           signInIcon.textContent = 'mark_email_read';
           signInBtn.classList.remove('opacity-80', 'pointer-events-none');
-          showToast('OTP sent to ' + (val.startsWith('+') ? val : '+63 ' + val)); setTimeout(()=>go(document.getElementById('tab-cleaner').classList.contains('bg-primary')?'cleaner':'home'),1000);
+          ps.set({role: currentRole === 'cleaner' ? 'cleaner' : 'customer'}); showToast('OTP sent to ' + (val.startsWith('+') ? val : '+63 ' + val)); setTimeout(()=>go(currentRole === 'cleaner' ? 'cleaner' : 'home'),1000);
 
           setTimeout(() => {
             signInText.textContent = origText;
