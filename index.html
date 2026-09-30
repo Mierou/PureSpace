@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PureSpace — Interactive Demo</title>
+<meta name="description" content="PureSpace: Cebu's community cleaning marketplace. Interactive mobile UI demo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+<style>
+  :root { --start: "1._welcome_login_interactive/code.html"; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; gap: 56px; padding: 24px;
+         background: radial-gradient(1200px 600px at 20% 10%, #e3f1fb, #f6fafc 60%); font-family: Manrope, system-ui, sans-serif; color: #0f2634; }
+  .phone { width: 390px; height: min(844px, calc(100vh - 48px)); border-radius: 44px; border: 10px solid #0f2634; background: #fff;
+           box-shadow: 0 30px 80px rgba(15,38,52,.28); overflow: hidden; flex-shrink: 0; }
+  iframe { width: 100%; height: 100%; border: 0; display: block; }
+  aside { max-width: 320px; }
+  h1 { font: 700 34px/1.15 Outfit, system-ui, sans-serif; margin: 0 0 8px; }
+  h1 span { color: #23638f; }
+  p { color: #516f84; line-height: 1.55; margin: 0 0 16px; }
+  button { font: 700 14px Manrope, system-ui, sans-serif; border: 0; border-radius: 14px; padding: 13px 20px; cursor: pointer; background: #23638f; color: #fff; }
+  button:active { transform: scale(.98); }
+  ul { padding-left: 18px; color: #516f84; line-height: 1.7; margin: 0 0 20px; }
+  @media (max-width: 899px) { aside { display: none; } }
+</style>
+</head>
+<body>
+<script>
+  // On real phones (and narrow windows) skip the device frame and open the app directly.
+  if (Math.min(screen.width, innerWidth) < 600) location.replace(getComputedStyle(document.documentElement).getPropertyValue('--start').trim().replace(/"/g, ''));
+</script>
+<div class="phone"><iframe id="app" title="PureSpace app" src="1._welcome_login_interactive/code.html"></iframe></div>
+<aside>
+  <h1>Pure<span>Space</span></h1>
+  <p>Cebu's community cleaning marketplace, as an interactive mobile demo. Sign in with any number, post a cleanup request, compare offers and chat with cleaners.</p>
+  <ul>
+    <li>Login → Home → Request → Offers → Chat</li>
+    <li>Your progress is saved in this browser</li>
+  </ul>
+  <button id="reset">Restart demo</button>
+</aside>
+<script>
+  document.getElementById('reset').onclick = () => { try { localStorage.removeItem('ps'); } catch (e) {} document.getElementById('app').src = '1._welcome_login_interactive/code.html'; };
+</script>
+</body>
+</html>
