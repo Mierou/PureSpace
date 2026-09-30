@@ -6,6 +6,7 @@
   const DEF = {reqs:[],chat:[{me:0,t:"Ma'am, hapit na nako mahuman ang luyo nga bahin (almost done with the back area)."},{me:0,t:'I attached a photo of the drainage.'}],pay:'GCash',notif:true};
   const ps = { get(){ try { return Object.assign({}, DEF, JSON.parse(localStorage.ps || '{}')); } catch(e){ return {...DEF}; } },
     set(p){ localStorage.ps = JSON.stringify(Object.assign(ps.get(), p)); } };
+  if (!/1\._welcome_login/.test(location.pathname) && !ps.get().role) go('login');   // not logged in: back to the login page
   Object.assign(window, {go, ps, switchNavTab: p => go({'customer-home':'home','service-requests':'requests','customer-messages':'messages','customer-profile':'profile'}[p] || 'home')});
   const toast = m => { const t = document.createElement('div'); t.textContent = m;
     t.className = 'fixed left-1/2 -translate-x-1/2 bottom-28 z-[100] bg-inverse-surface text-inverse-on-surface px-4 py-2 rounded-full text-sm shadow-lg';
@@ -24,7 +25,7 @@
     if (b.closest('nav') && navMap[txt.split(' ').pop()]) return stop(() => go(navMap[txt.split(' ').pop()]));
     if (b.dataset.path === 'messages' && !b.closest('nav')) return stop(() => history.length > 1 ? history.back() : go('messages'));
     if (document.body.dataset.new && b.closest('header')) return stop(() => /person/.test(txt) ? go('profile') : toast('No new notifications'));
-    if (/^Apply$/.test(txt) && location.pathname.includes('6._customer_profile')) return stop(() => { toast('Opening the Partner app…'); setTimeout(() => go('cleaner'), 600); });
+    if (/^Apply$/.test(txt) && location.pathname.includes('6._customer_profile')) return stop(() => { toast('Opening the Partner app…'); ps.set({role:'cleaner'}); setTimeout(() => go('cleaner'), 600); });
     if (b.id === 'btn-create-request') return stop(() => go('new'));
     if (b.id === 'logout-btn') return stop(() => { localStorage.removeItem('ps'); go('login'); });
     const cm = (b.getAttribute('onclick') || '').match(/Chat opened with (Kuya Juan|Elena|Dodong)/); if (cm) return stop(() => openChat(cm[1]));

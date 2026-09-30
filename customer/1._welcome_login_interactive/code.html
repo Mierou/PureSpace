@@ -265,16 +265,24 @@
       });
     }
 
-    // Continue with Google & Create Account button actions
+    // Continue with Google & Create Account: demo shortcuts that log in to whichever side is selected
+    let entering = false;
+    function enterApp(msg) {
+      if (entering || isSigningIn) return;
+      entering = true;
+      showToast(msg, true, 1400);
+      ps.set({role: currentRole === 'cleaner' ? 'cleaner' : 'customer'});
+      setTimeout(() => go(currentRole === 'cleaner' ? 'cleaner' : 'home'), 1200);
+    }
     if (googleBtn) {
       googleBtn.addEventListener('click', function() {
-        showToast('Opening Google Authentication...', true, 2000);
+        enterApp('Signing in with Google...');
       });
     }
 
     if (createAccountBtn) {
       createAccountBtn.addEventListener('click', function() {
-        showToast('Switching to Account Registration...', true, 2000);
+        enterApp('Creating your demo account...');
       });
     }
 

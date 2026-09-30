@@ -139,8 +139,9 @@
 </div>
 </div>
 <div class="flex flex-col items-end shrink-0 text-right">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Est. Payout</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Client Budget</span>
 <span class="font-headline-sm text-headline-sm text-on-secondary-container font-bold">₱450 - ₱550</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">You earn ₱382.50 - ₱467.50</span>
 <span class="font-label-sm text-label-sm text-tertiary-container font-medium">Cash or GCash</span>
 </div>
 </div>
@@ -343,16 +344,17 @@
 <span class="font-label-lg text-label-lg text-on-surface font-bold truncate" id="bidModalJobTitle">Job Title</span>
 </div>
 <div class="flex flex-col gap-1.5 pt-1">
-<label class="font-label-md text-label-md text-on-surface font-semibold">Your Proposed Payout (₱)</label>
+<label class="font-label-md text-label-md text-on-surface font-semibold">Your Bid to Client (₱)</label>
 <div class="relative flex items-center">
 <span class="absolute left-4 font-headline-sm text-headline-sm text-on-surface font-bold">₱</span>
-<input class="w-full h-12 pl-10 pr-4 rounded-xl bg-surface-container text-on-surface font-headline-sm text-headline-sm font-bold outline-none focus:bg-surface-container-lowest transition-colors" id="bidAmountInput" type="number" value="450"/>
+<input class="w-full h-12 pl-10 pr-4 rounded-xl bg-surface-container text-on-surface font-headline-sm text-headline-sm font-bold outline-none focus:bg-surface-container-lowest transition-colors" id="bidAmountInput" type="number" value="450" oninput="updateBidNet()"/>
 </div>
+<p class="font-label-md text-label-md text-secondary font-semibold" id="bidNet">You receive ₱382.50 after the 15% PureSpace fee</p>
 <div class="flex items-center gap-2 pt-1">
 <button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="adjustBid(-50)" type="button">- ₱50</button>
 <button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="adjustBid(50)" type="button">+ ₱50</button>
 <button class="px-2.5 py-1 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="adjustBid(100)" type="button">+ ₱100</button>
-<span class="font-body-sm text-body-sm text-on-surface-variant ml-auto">No platform deduction</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant ml-auto">15% fee applies</span>
 </div>
 </div>
 <div class="flex flex-col gap-1.5 pt-1">
@@ -408,8 +410,9 @@
 <p class="font-label-lg text-label-lg text-on-surface font-bold" id="drawerCustomer">Maria S.</p>
 </div>
 <div class="text-right">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Payout Range</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Client Budget</span>
 <p class="font-headline-sm text-headline-sm text-on-secondary-container font-bold" id="drawerPayout">₱450 - ₱550</p>
+<p class="font-label-sm text-label-sm text-secondary font-semibold" id="drawerNet">You earn ₱382.50 - ₱467.50 after 15% fee</p>
 </div>
 </div>
 <div class="flex flex-col gap-0.5 pt-1">
@@ -482,6 +485,7 @@
   function openBidModal(jobTitle, defaultBid) {
     document.getElementById('bidModalJobTitle').innerText = jobTitle;
     document.getElementById('bidAmountInput').value = defaultBid;
+    updateBidNet();
     const modal = document.getElementById('quickBidModal');
     const card = document.getElementById('quickBidCard');
     modal.classList.remove('opacity-0', 'pointer-events-none');
@@ -504,6 +508,12 @@
     let val = parseInt(input.value, 10) || 0;
     val = Math.max(200, val + delta);
     input.value = val;
+    updateBidNet();
+  }
+
+  function updateBidNet() {
+    const v = parseFloat(document.getElementById('bidAmountInput').value) || 0;
+    document.getElementById('bidNet').textContent = 'You receive ₱' + (v * 0.85).toLocaleString('en-PH', {minimumFractionDigits: 2, maximumFractionDigits: 2}) + ' after the 15% PureSpace fee';
   }
 
   function selectTimePill(el) {
