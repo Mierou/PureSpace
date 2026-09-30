@@ -15,6 +15,7 @@
   const openChat = n => { const k = chatFor(n); k ? go(k) : toast('Chat with ' + n + ' opens here (demo)'); };
   const rebook = () => { ps.set({rebook:{title:'Move-in Yard & Porch Clearing', budget:585, pay:'GCash'}}); toast('Rebooking Teresa — 10% repeat discount'); setTimeout(() => go('new'), 700); };
   Object.assign(window, {chatFor, openChat, rebook});
+  if (location.pathname.includes('4._messages')) window.openChatDrawer = n => openChat(n);   // retire the old in-page chat drawer mockup
   const navMap = {Home:'home',Requests:'requests',Messages:'messages',Profile:'profile'};
   document.addEventListener('click', e => {
     const b = e.target.closest('button, a'); if (!b) return;
@@ -32,7 +33,7 @@
     if (/Book Again/.test(txt)) return stop(() => rebook());
     if (/Track Status|^reply|Reply →|View Live Photo/i.test(txt) && !/\/4[b-e]\./.test(location.pathname)) return stop(() => go('chat'));
   }, true);
-  // open the right chat from a message-row card
-  document.addEventListener('click', e => { const c = e.target.closest('article, li, .cursor-pointer'); const k = c && chatFor(c.textContent);
-    if (k && location.pathname.includes('4._messages') && c.textContent.length < 400 && !e.target.closest('button')) go(k); });
+  // open the right chat from a message-row card (capture phase so the old inline handlers never run)
+  document.addEventListener('click', e => { const c = e.target.closest('.conversation-item, #hero-ongoing-card'); const k = c && chatFor(c.textContent);
+    if (k && location.pathname.includes('4._messages') && !e.target.closest('button')) { e.preventDefault(); e.stopImmediatePropagation(); go(k); } }, true);
 })();
