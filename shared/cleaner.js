@@ -20,7 +20,7 @@
   /* ---- shell: nav, online pill, bell, avatar ---- */
   const NAV = {'job-board':'board', 'active-dispatches':'active', 'earnings-wallet':'wallet', 'partner-profile':'profile'};
   document.addEventListener('click', e => {
-    const a = e.target.closest('nav a[data-path]'); if (a) { e.preventDefault(); e.stopImmediatePropagation(); return go(NAV[a.dataset.path] || 'board'); }
+    const a = e.target.closest('nav [data-path]'); if (a) { e.preventDefault(); e.stopImmediatePropagation(); return go(NAV[a.dataset.path] || 'board'); }
     if (e.target.closest('a[href="#"]')) e.preventDefault();
   }, true);
   const isOn = () => ps.get().online !== false;
@@ -29,9 +29,11 @@
     const dot = lab.previousElementSibling; if (dot) { dot.classList.toggle('bg-secondary', on); dot.classList.toggle('bg-outline', !on); dot.classList.toggle('animate-pulse', on); } }
   function setOnline(v) { ps.set({online:v}); paint(); const t = $('#dispatchToggle'); if (t) t.checked = v; if (PAGE === 'board') applyFilters(); }
   if (lab) lab.parentElement.addEventListener('click', () => { setOnline(!isOn()); toast(isOn() ? 'You are Online: ready for direct customer matches!' : 'You are Offline: dispatches paused.'); });
-  const bell = $('button[aria-label="Notifications"]');
-  if (bell) bell.addEventListener('click', () => { const n = ps.get().cn.filter(x => x.to === 'cleaner')[0]; toast(n ? n.t : 'No new notifications'); });
-  const av = $('header img[alt="Profile"]'); if (av) { av.style.cursor = 'pointer'; av.addEventListener('click', () => go('profile')); }
+  const bell = $('button[aria-label="Notifications"]'), dot = $('#bell-dot');
+  if (dot && ps.get().cn.some(x => x.to === 'cleaner' && !x.seen)) dot.classList.remove('hidden');   // unread dot, same as the customer bell
+  if (bell) bell.addEventListener('click', () => { const n = ps.get().cn.filter(x => x.to === 'cleaner')[0]; toast(n ? n.t : 'No new notifications');
+    if (dot) dot.classList.add('hidden'); ps.set({cn:ps.get().cn.map(x => x.to === 'cleaner' ? {...x, seen:true} : x)}); });
+  const av = $('header [aria-label="Profile Menu"]'); if (av) av.addEventListener('click', () => go('profile'));
   paint();
 
   /* ---- Job board ---- */
