@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>PureSpace Mobile</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Outfit:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary": "#ffffff", "on-secondary-container": "#0e5782", "surface-variant": "#dfe3e5", "surface-tint": "#4b6171", "on-surface": "#171c1e", "surface-dim": "#d6dbdd", "on-tertiary-fixed": "#2b1700", "surface-container-low": "#f0f4f6", "inverse-surface": "#2c3133", "on-tertiary-fixed-variant": "#673d00", "surface-container-highest": "#dfe3e5", "tertiary-fixed-dim": "#ffb867", "surface-container-lowest": "#ffffff", "outline": "#73787c", "on-primary": "#ffffff", "primary": "#00101b", "on-primary-fixed-variant": "#344958", "on-error": "#ffffff", "on-tertiary-container": "#c57a00", "surface-bright": "#f6fafc", "primary-container": "#0f2634", "inverse-on-surface": "#edf1f3", "secondary": "#23638f", "on-tertiary": "#ffffff", "background": "#f6fafc", "surface-container": "#eaeef0", "outline-variant": "#c3c7cc", "surface-container-high": "#e5e9eb", "primary-fixed": "#cee5f9", "on-secondary-fixed-variant": "#004b73", "on-surface-variant": "#43474b", "secondary-fixed": "#cce5ff", "tertiary": "#190b00", "tertiary-container": "#371e00", "secondary-container": "#93ccfe", "surface": "#f6fafc", "error": "#ba1a1a", "error-container": "#ffdad6", "tertiary-fixed": "#ffddbb", "on-secondary-fixed": "#001d31", "on-primary-container": "#788e9f", "secondary-fixed-dim": "#93ccfe", "inverse-primary": "#b3c9dc", "on-error-container": "#93000a", "primary-fixed-dim": "#b3c9dc", "on-primary-fixed": "#051e2b", "on-background": "#171c1e" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "margin": "1rem", "space-sm": "0.5rem", "margin-tablet": "1.5rem", "space-lg": "1.5rem" }, "fontFamily": { "body-sm": ["Manrope"], "headline-sm": ["Outfit"], "label-md": ["Manrope"], "headline-md": ["Outfit"], "body-md": ["Manrope"], "headline-lg": ["Outfit"], "body-lg": ["Manrope"], "label-lg": ["Manrope"], "display": ["Outfit"], "label-sm": ["Manrope"] }, "fontSize": { "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "700" }], "display": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.animate-slide-up{animation:slideUp 0.3s cubic-bezier(0.16,1,0.3,1) forwards;}@keyframes slideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}</style></head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-secondary-container selection:text-on-secondary-container relative"><header class="fixed top-0 w-full z-40 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(15,38,52,0.04)]"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="PureSpace Logo" class="h-8 w-8 object-contain shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Sq9K8bBbbbRPPU9xAVbiZTWiJebVc1HJKsd4IofLZ56oiZrciNCym3lrr1liJrDXWc1Hl191mXv1kV6d5O8FDx4m_jPL5ZqFOonAXmigXR8jm8LxFWpjce-DgpxnZXZMd-FpVuHfl17RjX8CR6xqfeLc_t4QtJNP1M_vVDqtmoFMwXxeE2utKLIMorc93u6WPozIzqwrNIplq19PI0k5ZtbE9OX73J7AmFKPzxngHly7ZRzcVhOUF0-Vt5pwMsQDpg"/><div class="flex flex-col min-w-0"><div class="flex items-center gap-1"><span class="font-headline-sm text-headline-sm text-on-surface truncate">PureSpace</span><span class="text-xs text-on-tertiary-container font-label-sm leading-none">✦</span></div><div class="flex items-center gap-1 text-secondary truncate"><span class="material-symbols-outlined text-[13px] shrink-0">location_on</span><span class="font-body-sm text-body-sm text-on-surface-variant truncate" id="current-location-text">Mambaling, Cebu City</span></div></div></div><div class="flex items-center gap-space-xs shrink-0 relative"><div class="hidden"><span class="font-headline-sm text-headline-sm">Customer Home</span></div><button aria-label="Notifications" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container active:scale-95 transition-all relative" id="btn-notifications" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-secondary-container" id="bell-dot"></span></button><button aria-label="Profile Menu" class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 active:scale-90 transition-transform" id="btn-avatar" type="button"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></button>
+<!-- Header Dropdowns -->
+<div class="hidden absolute top-14 right-2 w-72 bg-surface-container-lowest border border-outline-variant/30 rounded-2xl shadow-xl p-3 z-50 flex-col gap-2" id="notifications-popover">
+<div class="flex items-center justify-between border-b border-surface-container pb-2">
+<span class="font-label-md text-label-md font-bold text-on-surface">Notifications (3)</span>
+<button class="text-secondary text-xs hover:underline" id="dismiss-notifications-btn">Mark read</button>
+</div>
+<div class="flex flex-col gap-2 text-xs">
+<div class="p-2 bg-surface-container-low rounded-xl">
+<span class="font-semibold text-secondary">Kuya Juan D. is en route</span>
+<p class="text-on-surface-variant">ETA 12 minutes to Sitio Lawis.</p>
+</div>
+<div class="p-2 hover:bg-surface-container-low rounded-xl transition-colors">
+<span class="font-semibold text-on-surface">Promo Applied!</span>
+<p class="text-on-surface-variant">₱50 discount applied for today's booking.</p>
+</div>
+</div>
+</div>
+<div class="hidden absolute top-14 right-0 w-52 bg-surface-container-lowest border border-outline-variant/30 rounded-2xl shadow-xl p-2 z-50 flex-col text-sm" id="avatar-popover">
+<div class="px-3 py-2 border-b border-surface-container">
+<p class="font-bold text-on-surface">Maria Santos</p>
+<p class="text-[11px] text-on-surface-variant truncate">maria.santos@cebu.ph</p>
+</div>
+<button class="w-full text-left px-3 py-2 hover:bg-surface-container-low rounded-lg transition-colors flex items-center gap-2" onclick="showToast('Profile &amp; Settings')"><span class="material-symbols-outlined text-[18px]">account_box</span>Account</button>
+<button class="w-full text-left px-3 py-2 hover:bg-surface-container-low rounded-lg transition-colors flex items-center gap-2" onclick="showToast('Payment Methods: GCash Active')"><span class="material-symbols-outlined text-[18px]">credit_card</span>Payments</button>
+<button class="w-full text-left px-3 py-2 hover:bg-surface-container-low rounded-lg text-error transition-colors flex items-center gap-2" onclick="showToast('Logged out')"><span class="material-symbols-outlined text-[18px]">logout</span>Log out</button>
+</div>
+</div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 px-margin bg-surface flex-1"><div class="flex flex-col w-full pb-16">
+<!-- Top Segment & Local Location Banner -->
+<div class="flex items-center justify-between py-2">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Service Log</span>
+<h1 class="font-headline-md text-headline-md text-on-surface">My Requests</h1>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">location_on</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Mambaling, Cebu</span>
+</div>
+</div>
+<!-- Search & Instant Filter Bar -->
+<div class="mt-3 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-12 pl-11 pr-11 bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md font-body-md rounded-xl shadow-sm focus:outline-none focus:ring-0 focus:bg-surface-container-low transition-all" id="request-search-input" placeholder="Search by cleaner, job type, or ID..." type="text"/>
+<button aria-label="Filter requests" class="absolute right-2.5 w-8 h-8 rounded-lg flex items-center justify-center text-secondary hover:bg-secondary-container/30 active:scale-95 transition-transform" id="search-filter-toggle" onclick="showToast('Filter panel opened', 'tune')">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+<!-- Primary Interactive Segmented Controls (Active vs Completed) -->
+<div class="mt-4 p-1 rounded-2xl bg-surface-container flex items-center shadow-inner">
+<button class="flex-1 py-2.5 rounded-xl font-label-lg text-label-lg transition-all duration-200 flex items-center justify-center gap-2 bg-surface-container-lowest text-secondary shadow-sm" id="tab-active-btn" onclick="switchMainTab('active')">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Active (2)</span>
+</button>
+<button class="flex-1 py-2.5 rounded-xl font-label-lg text-label-lg transition-all duration-200 flex items-center justify-center gap-2 text-on-surface-variant hover:text-on-surface" id="tab-completed-btn" onclick="switchMainTab('completed')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Completed (5)</span>
+</button>
+</div>
+<!-- Sub-Filter Pills (Active View) -->
+<div class="mt-3 flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none" id="sub-filters-container">
+<button class="sub-filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-secondary text-on-secondary shadow-sm transition-all whitespace-nowrap" data-filter="all" onclick="applySubFilter('all', this)">
+      All Active (2)
+    </button>
+<button class="sub-filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm transition-all whitespace-nowrap flex items-center gap-1.5" data-filter="in-progress" onclick="applySubFilter('in-progress', this)">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+      In Progress (1)
+    </button>
+<button class="sub-filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm transition-all whitespace-nowrap flex items-center gap-1.5" data-filter="awaiting" onclick="applySubFilter('awaiting', this)">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+      Awaiting Cleaners (1)
+    </button>
+<button class="sub-filter-pill px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface-variant shadow-sm transition-all whitespace-nowrap" data-filter="scheduled" onclick="applySubFilter('scheduled', this)">
+      Scheduled (0)
+    </button>
+</div>
+<!-- ACTIVE REQUESTS SECTION -->
+<div class="mt-4 flex flex-col gap-4" id="active-list">
+<!-- Active Job 1: In Progress -->
+<article class="request-card w-full rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden transition-all duration-200" data-card-type="in-progress">
+<div class="p-4 flex flex-col gap-3">
+<!-- Header badge & Price -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/40 text-on-secondary-container">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold">In Progress</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface">₱450</span>
+<span class="font-label-sm text-label-sm text-outline block -mt-1">Agreed Rate</span>
+</div>
+</div>
+<!-- Job Info -->
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Backyard &amp; Drainage Cleanup</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">distance</span>
+<span class="font-body-sm text-body-sm">Sitio Lawis, Mambaling • Started 8:30 AM</span>
+</div>
+</div>
+<!-- Assigned Cleaner Cardlet -->
+<div class="p-2.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="relative w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close up warm portrait of a friendly male professional Filipino cleaner wearing a navy PureSpace safety polo shirt and tidy cap in Cebu City with outdoor tropical greenery in soft ambient focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAhCGSG2JaFEKzvGK2CxpUWAq4Up6AB2O6eGDFrphf0dLXSsbgM-XEIFLK5dACxy6w4sjLY06tP9UAFrMPU-ZPNBGPCyzaJ_r_Tn7XXrDo7-JUNh07GgzqZWbFJhEW1YnQ-eCjZ5POm0aG1lWy1eWbilB06Ol8QQB5qJM-IHyRon8e1fA2axxhMVyuL0BMRNC76ao0Z18ULDT81esKQMyOvY1eVVVYgFtSgca0M166oR3vifk-ZoyH"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-secondary border-2 border-surface-container-lowest"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-label-lg text-label-lg text-on-surface truncate">Kuya Juan D.</span>
+<span class="material-symbols-outlined text-secondary text-[14px]">verified</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-tertiary-fixed-dim font-bold">★ 4.8</span>
+<span>(62 neighborhood jobs)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="w-9 h-9 rounded-xl bg-surface-container-highest/60 hover:bg-surface-container-highest text-secondary flex items-center justify-center active:scale-90 transition-transform" onclick="showToast('Calling Kuya Juan (+63 917 555 0192)...', 'call')" title="Call cleaner">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-secondary-container/50 hover:bg-secondary-container text-on-secondary-container flex items-center justify-center active:scale-90 transition-transform" onclick="showToast('Opening chat with Kuya Juan...', 'chat')" title="Chat with cleaner">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<!-- Progress Timeline Micro-Component -->
+<div class="pt-1 flex flex-col gap-1.5">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span class="font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Dispatched
+            </span>
+<span class="font-semibold text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Cleaner On-Site
+            </span>
+<span class="text-outline flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pending</span> Final Pay
+            </span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary w-2/3 rounded-full"></div>
+<div class="h-full bg-transparent w-1/3"></div>
+</div>
+</div>
+<!-- Primary Action Triggers -->
+<div class="pt-2 flex items-center gap-2">
+<button class="flex-1 h-11 px-4 rounded-xl bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-md active:scale-98 hover:bg-primary-container transition-all" onclick="document.getElementById('tracking-modal').classList.remove('hidden'); document.getElementById('tracking-modal').classList.add('flex');">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">near_me</span>
+<span>Track Live Status</span>
+</button>
+<button class="h-11 px-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="showToast('Instructions: Backyard key under front mat confirmed', 'info')">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Details</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Active Job 2: Awaiting Offers -->
+<article class="request-card w-full rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden transition-all duration-200" data-card-type="awaiting">
+<div class="p-4 flex flex-col gap-3">
+<!-- Header badge & Estimation -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed/60 text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">local_offer</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold">3 Offers Received</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-secondary">ID #PS-4091</span>
+</div>
+<!-- Title & Details -->
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Storefront Glass &amp; Deep Sweep</h2>
+<div class="flex items-center gap-1.5 text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-secondary">calendar_today</span>
+<span class="font-body-sm text-body-sm">Tomorrow, Oct 16 • 9:00 AM • C. Padilla St.</span>
+</div>
+</div>
+<!-- Quotation Snapshot -->
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Bids ranging from:</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">₱350 - ₱550</span>
+</div>
+<!-- Bidder Avatars Stack -->
+<div class="flex items-center justify-between">
+<div class="flex items-center -space-x-2">
+<div class="w-8 h-8 rounded-full shadow-sm overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Elena a friendly Filipina cleaning specialist in bright sunny room smiling pleasantly with tidy apron." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1vkc5f2heTEmLe8KqwdtyqamWmEvcIsnaxtN02YrS9roJULdAcMeKldO-qdM1NIPxGHaBA28_Gpii3zxVc7yUH5jSNFYurybjvebDopV6llI0dRrdcnkkptYJ9H3ZKO2mWXGkaj9v-YO91VkHhhboaqdkzvgCnz_Ggz3L18uwjFkMmK18aEe-75nf8JFFdeHCzmIbCzgHk3QPUn4vhNj2mweM8qejvX9Lh0tM_q0btox3foWkaszA"/>
+</div>
+<div class="w-8 h-8 rounded-full shadow-sm overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Dodong an experienced Cebuano home sanitation handyman holding micro-fiber gear with confident warm smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqEc9ej5X0qd8ML31uFtvqiCWsS3gp9rw0NRXI2lEebmhpE_7J7NcHtvU0n6i5XcaH__e5qHRdqRItStf_KAPuns_Zub6845K-wxpnXUGOpdpG_-PNSsJ8CdD7-f_61fzpyFfEAs_XPkxMkzxhvdeZay9KJgjHUsD9AGU_iFu-n6CbKRxsSWKFzKZNmRlG97t2PPi340ParRSNrf1tQ4ZlKlsOyz3t-30dJrigXiPBrvo7dCl1T38n"/>
+</div>
+<div class="w-8 h-8 rounded-full shadow-sm overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Bryan a young energetic residential cleaner in clean work shirt ready for scheduled dispatch in Cebu." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9ywW6WWpHtgQJWxE_BsJKZoo0yKbbc3g_EiAGIG60Awl8zzzASwhqy6TShihnHySuK47uEGc9pUqhAYeRgrkqFJfh-JiJDImHNYSxIo7ikoHL36sPK_Iep_CRNkPKcmOH0hhZ91OgMVB4sd-9P8l03BjGuWxN1ebQ6Y49lA7DwhsSKtK_sCsS4RZcwseIjiukiMPO-641TYzL3DgZ8XnEi4xTXJmzN-ABH6BMrZqM6Yk8RmLQCppS"/>
+</div>
+<div class="pl-3 font-body-sm text-body-sm text-on-surface font-medium truncate">
+                Elena, Dodong, Bryan
+              </div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">100% Verified</span>
+</div>
+</div>
+<!-- Action Row -->
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 h-11 px-4 rounded-xl bg-secondary text-on-secondary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-md active:scale-98 hover:bg-on-secondary-fixed-variant transition-all" onclick="openOffersSheet()">
+<span>Compare 3 Offers</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center active:scale-95 transition-transform" onclick="showToast('Edit Request Form opened', 'edit')" title="Edit request specifics">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-outline font-label-md text-label-md flex items-center justify-center active:scale-95 transition-transform" onclick="promptCancelRequest('PS-4091')" title="Cancel request">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- COMPLETED REQUESTS SECTION (Hidden by default, shown on Completed tab) -->
+<div class="mt-4 hidden flex-col gap-4" id="completed-list">
+<!-- Completed Job 1 -->
+<article class="request-card w-full rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden transition-all duration-200">
+<div class="p-4 flex flex-col gap-3">
+<!-- Status & Paid Info -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-secondary">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold">Completed &amp; Paid</span>
+</div>
+<div class="text-right">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">₱650</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium block -mt-1">via GCash</span>
+</div>
+</div>
+<!-- Job Details -->
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Move-in Yard &amp; Porch Clearing</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Oct 12, 2024 • Completed at 3:30 PM</p>
+</div>
+<!-- Service Provider & Verified Rating -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2">
+<div class="w-9 h-9 rounded-full overflow-hidden bg-surface-container-highest shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Portrait of Teresa M., an experienced smiling Filipina professional cleaner wearing blue apron and holding spotless duster indoors in Cebu City." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVtKz1swo_8bLLcSLqJohpHavCnxNhPOIrgpHQWEfgLUbaRphz1oWsKDcCOU0X567QWeu6tHeNPjmLA5DEXrnYVX_Ai-icSUxCIjgzpbEdyBFIgerSr38CVox4n3zxOwoWio2duRUQHKh-6P2Vuuss1kOddZssPRjgq3ows7r9AtAhEGzj6ormIq4kRqEJX8OLuTlQzXX5fe2uk2aT1-lcNGKV1ltd6Tl0e7ja6Nq7kHw-Ca0du96S"/>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Teresa M.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Receipt #PS-98214</span>
+</div>
+</div>
+<div class="flex items-center text-tertiary-fixed-dim text-sm font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Photo preview chips -->
+<div class="flex items-center gap-2 pt-0.5">
+<div class="relative w-16 h-12 rounded-lg overflow-hidden bg-surface-container-high shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Before cleanup image showing messy overgrown courtyard patio with scattered fallen dry palm leaves in residential Cebu area." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVX8enzky8qp55tLRvdBFB7QHi8AYbEomYNLBjcEkrBzB5vpmK9P4JlPALI2d1_8_Z1PATBnsXqxpGU5Kw8KxFGMmpWGzXruVk__bNJWIAw2eKJKLKwy69Lp7yS_wIQNeQSQ_bntH01Sg62rWWBulx9ecQ33bSEEDZ22ZM9T7Vsqs1ZpDsSqhlNSv1oA-VnABu0SdgwA0sf3nzkehP0yq0AC5nie39B70PoWMHLQh-vDsARfAf_YFu"/>
+<span class="absolute bottom-0 inset-x-0 bg-primary/70 text-on-primary text-[8px] font-bold text-center py-0.5 uppercase">Before</span>
+</div>
+<div class="relative w-16 h-12 rounded-lg overflow-hidden bg-surface-container-high shadow-xs">
+<img class="w-full h-full object-cover" data-alt="After cleanup image showing glistening clean swept outdoor tiled patio, perfectly sanitized and fresh with spotless flowerpots." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDECGZ6H0D0-hYJHC_lKvoX0-ERZmj3W3C5hEzpXON338P0Q_B0AEDVLP4q2GSiqN_2BspBIGj8T9CDCk0jXAYb6JyQjpAiggwwDg1qmolqdibngXRdbsiVwB45PVwXSjRE-EpKcAzbLF0jVTIkqZaxnvBaDSsNiUAQpW-H0-TWD0pQvaHF8Ulb79zTw02-uVQjpJQ5n4zU2SMDMT5k9dPVTx1T-zkb256XlHAl8POOLidK6U8H-UXs"/>
+<span class="absolute bottom-0 inset-x-0 bg-secondary/80 text-on-secondary text-[8px] font-bold text-center py-0.5 uppercase">After</span>
+</div>
+<div class="flex-1 flex flex-col justify-center pl-1">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">Job Quality Guarantee</span>
+<span class="font-body-sm text-[11px] text-outline">Both photos verified by PureSpace</span>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-secondary font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="showToast('Booking Teresa M. again with previous rates...', 'repeat')">
+<span class="material-symbols-outlined text-[16px]">repeat</span>
+<span>Book Again</span>
+</button>
+<button class="flex-1 h-10 px-3 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="showToast('Downloaded Official E-Receipt #PS-98214', 'receipt')">
+<span class="material-symbols-outlined text-[16px]">receipt</span>
+<span>View Receipt</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Completed Job 2 -->
+<article class="request-card w-full rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden transition-all duration-200">
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase">
+            Completed
+          </span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">₱800 <span class="text-body-sm text-outline font-normal">Cash</span></span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Heavy Post-Flood Gutter Declogging</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Oct 04, 2024 • South Mambaling</p>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">cleaning_services</span>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Dodong Cleaners (South)</span>
+<span class="font-label-sm text-label-sm text-outline">Team of 2 members</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">2.5 hrs</span>
+</div>
+<div class="pt-1 flex items-center gap-2">
+<button class="flex-1 h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-secondary font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="showToast('Re-booking Dodong Cleaners team...', 'repeat')">
+<span class="material-symbols-outlined text-[16px]">repeat</span>
+<span>Book Again</span>
+</button>
+<button class="flex-1 h-10 px-3 rounded-xl bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="showToast('Summary &amp; Job completion notes opened', 'description')">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Summary</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Completed Job 3 -->
+<article class="request-card w-full rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden transition-all duration-200">
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase">
+            Completed
+          </span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">₱500 <span class="text-body-sm text-secondary font-normal">GCash</span></span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Bulky Tree Branches &amp; Debris Disposal</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sep 28, 2024 • Sitio Lawis</p>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">person_check</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Kuya Juan D.</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary-fixed-dim font-bold">★ 5.0 Rated</span>
+</div>
+<div class="pt-1 flex items-center gap-2">
+<button class="w-full h-10 px-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-secondary font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform" onclick="showToast('Re-booking Kuya Juan for hauling service...', 'repeat')">
+<span class="material-symbols-outlined text-[16px]">repeat</span>
+<span>Book Again</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty State UI Container (Toggled via search or filtering) -->
+<div class="hidden mt-8 flex-col items-center justify-center text-center p-6 bg-surface-container-lowest rounded-3xl shadow-sm" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-secondary mb-3">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">No requests match</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs mt-1">
+      We couldn't find any cleaning requests matching your active filter criteria.
+    </p>
+<button class="mt-4 px-4 py-2 rounded-xl bg-secondary text-on-secondary font-label-md text-label-md shadow-sm active:scale-95 transition-transform" onclick="resetFilters()">
+      Reset Filters
+    </button>
+</div>
+<!-- Floating Sticky Action Trigger for + New Cleanup Request -->
+<div class="fixed bottom-24 right-4 left-4 z-30 pointer-events-none flex justify-center">
+<button class="pointer-events-auto h-13 px-6 py-3.5 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-xl hover:bg-primary-container flex items-center gap-2.5 active:scale-95 transition-all duration-200" id="btn-create-request" onclick="showToast('Launching new PureSpace domestic cleanup wizard...', 'add_task')">
+<span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</span>
+<span>Post New Cleanup Job</span>
+</button>
+</div>
+<!-- Sheet/Modal for Comparing Offers -->
+<div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-xs hidden items-end justify-center" id="offers-sheet">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-t-3xl p-5 shadow-2xl animate-slide-up flex flex-col gap-4 max-h-[85vh] overflow-y-auto">
+<div class="w-12 h-1.5 bg-outline-variant/60 rounded-full mx-auto -mt-1 mb-1"></div>
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">C. Padilla St.</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">3 Offers Received</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface" onclick="closeOffersSheet()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Offers List -->
+<div class="flex flex-col gap-3">
+<!-- Bid 1: Elena -->
+<div class="p-3.5 rounded-2xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Elena a friendly Filipina cleaning specialist in bright sunny room smiling pleasantly with tidy apron." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD7da7jUgj9cQrPWdMejaePEriOivuz6sjMNnaWGSFEJkfrLdhMQPLNIRCPx5REErUWgzl8VDpdsEM0Y72m0gv39JfEGkI0dVFrPqEGvkJbLHtrkwJFBrogVSlfbvdJLCmV45xLD9ErmEUVyzStpon1QlkKzp0S5bWo_5pycj2mJyObaOxZ1wbct5qDfnEz-A5ZnhvGI4MXQfcynwLzP5nEzPukEwyGJcrz-zlQ1fcHhLdnTbkqyS1"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Elena R.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">★ 4.9 • 38 Jobs in Mambaling</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">₱400</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            "I have commercial squeegees for clear storefront glass and can bring industrial eco-friendly spray."
+          </p>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md active:scale-95 transition-transform" onclick="acceptOffer('Elena R.', 400)">
+              Accept Offer
+            </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container-lowest text-secondary font-label-md text-label-md" onclick="showToast('Chat opened with Elena', 'chat')">
+              Chat
+            </button>
+</div>
+</div>
+<!-- Bid 2: Dodong -->
+<div class="p-3.5 rounded-2xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Dodong an experienced Cebuano home sanitation handyman holding micro-fiber gear with confident warm smile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzdUXxFJQf-X-ZKCqID_n54YJmtxfHLT5ZUm0XlAY5r8IkDYdSEJvPAmFDIbLRMrcqOpe8256OVtBB6bdgPN71jUEKoKKQhnZIzSNH9nDmd7E869HIoHlozqkavTPPWaqrRTlwhzt8hgok21yLo4iWk0qnUlCg3SBbXBr_0FMNm1kpLP1UsYeK3eAKeg8AULFtKS-Y4xUlCf1Tvwe2WVwTulmd75luTsAYgiOysJ5WIrXG50U5G30g"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Dodong Cleaners</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">★ 4.7 • 2 person team</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">₱550</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            "Includes 2 assistants and vacuum sweeps for floor gutters. 45 min guaranteed completion."
+          </p>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md active:scale-95 transition-transform" onclick="acceptOffer('Dodong Cleaners', 550)">
+              Accept Offer
+            </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container-lowest text-secondary font-label-md text-label-md" onclick="showToast('Chat opened with Dodong team', 'chat')">
+              Chat
+            </button>
+</div>
+</div>
+<!-- Bid 3: Bryan -->
+<div class="p-3.5 rounded-2xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Portrait photo of Bryan a young energetic residential cleaner in clean work shirt ready for scheduled dispatch in Cebu." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9CSOOrC_i2LbxSYCaS1TX1_CwEeosg17d5nU0THrbwu5AAxW7GbzMLb59ggbILAasux7hEkJXfDSxSuBdWjw5QC2mHzV4BuqRIwyomjLGbskfQ4op-UQegCtiGvLm4VeMENXt8pAEJQQf7fykBpzKFokf_txaEc6TUOaKj6xghVm9dtDv07WnssZsbVB1BoqYpkXuFMal1JdgUbhcFAjuEX4whiJCTefLCDow-Wkqkv6bvxB2D0_o"/>
+</div>
+<div>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Bryan S.</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">★ 4.6 • 19 Jobs</span>
+</div>
+</div>
+<span class="font-headline-sm text-headline-sm text-secondary font-bold">₱350</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            "Living right near C. Padilla, can arrive 10 minutes early with full broom set."
+          </p>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md active:scale-95 transition-transform" onclick="acceptOffer('Bryan S.', 350)">
+              Accept Offer
+            </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container-lowest text-secondary font-label-md text-label-md" onclick="showToast('Chat opened with Bryan', 'chat')">
+              Chat
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentMainTab = 'active';
+  let currentSubFilter = 'all';
+
+  function switchMainTab(tab) {
+    currentMainTab = tab;
+    const tabActiveBtn = document.getElementById('tab-active-btn');
+    const tabCompletedBtn = document.getElementById('tab-completed-btn');
+    const activeList = document.getElementById('active-list');
+    const completedList = document.getElementById('completed-list');
+    const subFilters = document.getElementById('sub-filters-container');
+    const emptyState = document.getElementById('empty-state');
+
+    emptyState.classList.add('hidden');
+    emptyState.classList.remove('flex');
+
+    if (tab === 'active') {
+      tabActiveBtn.classList.add('bg-surface-container-lowest', 'text-secondary', 'shadow-sm');
+      tabActiveBtn.classList.remove('text-on-surface-variant');
+      tabCompletedBtn.classList.remove('bg-surface-container-lowest', 'text-secondary', 'shadow-sm');
+      tabCompletedBtn.classList.add('text-on-surface-variant');
+
+      activeList.classList.remove('hidden');
+      activeList.classList.add('flex');
+      completedList.classList.add('hidden');
+      completedList.classList.remove('flex');
+      subFilters.classList.remove('hidden');
+      subFilters.classList.add('flex');
+      showToast('Viewing 2 Active cleanup tasks', 'bolt');
+    } else {
+      tabCompletedBtn.classList.add('bg-surface-container-lowest', 'text-secondary', 'shadow-sm');
+      tabCompletedBtn.classList.remove('text-on-surface-variant');
+      tabActiveBtn.classList.remove('bg-surface-container-lowest', 'text-secondary', 'shadow-sm');
+      tabActiveBtn.classList.add('text-on-surface-variant');
+
+      completedList.classList.remove('hidden');
+      completedList.classList.add('flex');
+      activeList.classList.add('hidden');
+      activeList.classList.remove('flex');
+      subFilters.classList.add('hidden');
+      subFilters.classList.remove('flex');
+      showToast('Viewing 5 Completed service logs', 'verified');
+    }
+  }
+
+  function applySubFilter(filter, el) {
+    currentSubFilter = filter;
+    const pills = document.querySelectorAll('.sub-filter-pill');
+    pills.forEach(p => {
+      p.classList.remove('bg-secondary', 'text-on-secondary');
+      p.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+    });
+    el.classList.add('bg-secondary', 'text-on-secondary');
+    el.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+
+    const cards = document.querySelectorAll('#active-list .request-card');
+    const emptyState = document.getElementById('empty-state');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const type = card.getAttribute('data-card-type');
+      if (filter === 'all' || type === filter) {
+        card.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    if (visibleCount === 0) {
+      emptyState.classList.remove('hidden');
+      emptyState.classList.add('flex');
+    } else {
+      emptyState.classList.add('hidden');
+      emptyState.classList.remove('flex');
+    }
+
+    showToast(`Filter: ${filter.replace('-', ' ').toUpperCase()}`, 'filter_alt');
+  }
+
+  function resetFilters() {
+    const allPill = document.querySelector('.sub-filter-pill[data-filter="all"]');
+    if (allPill) applySubFilter('all', allPill);
+    const searchInput = document.getElementById('request-search-input');
+    if (searchInput) searchInput.value = '';
+  }
+
+  function openOffersSheet() {
+    const sheet = document.getElementById('offers-sheet');
+    sheet.classList.remove('hidden');
+    sheet.classList.add('flex');
+  }
+
+  function closeOffersSheet() {
+    const sheet = document.getElementById('offers-sheet');
+    sheet.classList.add('hidden');
+    sheet.classList.remove('flex');
+  }
+
+  function acceptOffer(cleaner, amount) {
+    closeOffersSheet();
+    showToast(`Offer from ${cleaner} (₱${amount}) accepted!`, 'check_circle');
+  }
+
+  function promptCancelRequest(id) {
+    if (confirm(`Are you sure you want to cancel request #${id}? Verified cleaners will be notified.`)) {
+      showToast(`Request #${id} cancelled`, 'delete');
+    }
+  }
+
+  // Live client search filtering micro-interaction
+  const searchInput = document.getElementById('request-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      const targetContainer = currentMainTab === 'active' ? document.getElementById('active-list') : document.getElementById('completed-list');
+      const cards = targetContainer.querySelectorAll('.request-card');
+      const emptyState = document.getElementById('empty-state');
+      let matches = 0;
+
+      cards.forEach(c => {
+        const text = c.innerText.toLowerCase();
+        if (text.includes(query)) {
+          c.classList.remove('hidden');
+          matches++;
+        } else {
+          c.classList.add('hidden');
+        }
+      });
+
+      if (matches === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    });
+  }
+
+  // Auto-highlight "Requests" tab in the bottom shell nav if present
+  const shellTabs = document.querySelectorAll('.nav-tab');
+  shellTabs.forEach(t => {
+    if (t.getAttribute('data-name') === 'Requests') {
+      t.classList.add('text-secondary', 'font-semibold');
+      t.classList.remove('text-on-surface-variant');
+      t.setAttribute('aria-current', 'page');
+    } else {
+      t.classList.remove('text-secondary', 'font-semibold');
+      t.classList.add('text-on-surface-variant');
+      t.removeAttribute('aria-current');
+    }
+  });
+</script></main>
+<!-- Bottom Nav -->
+<nav class="fixed bottom-0 w-full z-40 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_16px_rgba(15,38,52,0.06)]" data-active-classes="text-secondary font-semibold" id="bottom-nav"><div class="h-20 px-space-sm flex items-center justify-around">
+<button aria-current="page" class="nav-tab flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 transition-all text-secondary font-semibold" data-name="Home" data-path="customer-home" type="button">
+<span class="material-symbols-outlined text-[24px]">qr_code_2</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</button>
+<button class="nav-tab flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-all" data-name="Requests" data-path="service-requests" type="button">
+<span class="material-symbols-outlined text-[24px]">assignment</span>
+<span class="font-label-sm text-label-sm">Requests</span>
+</button>
+<button class="nav-tab flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-all relative" data-name="Messages" data-path="customer-messages" type="button">
+<div class="relative flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">chat_bubble</span>
+<span class="absolute -top-1 -right-2 min-w-[16px] h-4 px-1 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] flex items-center justify-center" id="badge-msg">3</span>
+</div>
+<span class="font-label-sm text-label-sm">Messages</span>
+</button>
+<button class="nav-tab flex flex-col items-center justify-center min-w-[64px] h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-all" data-name="Profile" data-path="customer-profile" type="button">
+<span class="material-symbols-outlined text-[24px]">account_circle</span>
+<span class="font-label-sm text-label-sm">Profile</span>
+</button>
+</div></nav>
+<!-- Live Dispatch Tracking Drawer/Modal -->
+<div class="fixed inset-0 z-50 bg-primary/60 backdrop-blur-sm hidden items-end justify-center transition-opacity" id="tracking-modal">
+<div class="bg-surface-container-lowest w-full max-w-md rounded-t-3xl p-5 shadow-2xl animate-slide-up flex flex-col gap-4 max-h-[85vh] overflow-y-auto">
+<!-- Drawer Handle -->
+<div class="w-12 h-1.5 bg-outline-variant/60 rounded-full mx-auto -mt-1 mb-1"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">my_location</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Live Cleaner Dispatch</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors" id="close-tracking-btn">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Live Map Simulation / Route Graphic -->
+<div class="relative w-full h-36 bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/30 flex items-center justify-center">
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#23638f_1px,transparent_1px)] [background-size:12px_12px]"></div>
+<div class="relative z-10 flex items-center gap-4">
+<div class="flex flex-col items-center gap-1">
+<div class="w-9 h-9 rounded-full bg-secondary text-on-secondary flex items-center justify-center shadow-md animate-bounce">
+<span class="material-symbols-outlined text-[18px]">directions_run</span>
+</div>
+<span class="text-[11px] font-bold text-secondary">Kuya Juan</span>
+</div>
+<div class="w-24 h-1 border-t-2 border-dashed border-secondary relative flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[14px] absolute animate-pulse">navigation</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[18px]">home</span>
+</div>
+<span class="text-[11px] font-semibold text-on-surface">Sitio Lawis</span>
+</div>
+</div>
+<div class="absolute bottom-2 left-3 bg-surface-container-lowest/90 px-2 py-0.5 rounded-md text-[11px] font-medium text-secondary">
+        GPS Active • 450m away
+      </div>
+</div>
+<!-- Status Details Card -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full overflow-hidden bg-surface-variant shrink-0">
+<img alt="Juan D." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-lEp5Ablwscy1LJjXUKK1C74bJoTfHf9xqFcs7TZWD0HeH2FGZki9myXVRgzHCz_V1QOyeQYwjfdgD9BPeMcg-31AnIxIGRqIgy0drDCA3BMmGF_K8S-w5qtCftr3E3qaQ11t-qqUAd2tj0lEiJpQezspLiKztvsQ7xaKQiPHQmcsaKYljRBReQJ12A9HHjz8LMGzVFT7rW20eZ_xmCBqpCGjFew8tFRRX3frbxxoDoHqjsOqdMk8"/>
+</div>
+<div>
+<h4 class="font-headline-sm text-sm text-on-surface font-bold">Kuya Juan D.</h4>
+<p class="font-body-sm text-xs text-on-surface-variant">ETA: <strong class="text-secondary">~12 minutes</strong></p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-9 h-9 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center active:scale-90 transition-transform" onclick="showToast('Calling Kuya Juan (+63 917 123 4567)...')">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center active:scale-90 transition-transform" onclick="showToast('Chat opened with Kuya Juan')">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<!-- Timeline Steps -->
+<div class="flex flex-col gap-2 pl-2">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<div>
+<p class="text-xs font-bold text-on-surface">Job Accepted &amp; Confirmed</p>
+<p class="text-[11px] text-on-surface-variant">8:30 AM • Sitio Lawis Backyard</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[18px] animate-spin">sync</span>
+<div>
+<p class="text-xs font-bold text-secondary">On the way with gear</p>
+<p class="text-[11px] text-on-surface-variant">Passing N. Bacalso Ave, Cebu City</p>
+</div>
+</div>
+<div class="flex items-start gap-3 opacity-50">
+<span class="material-symbols-outlined text-outline text-[18px]">radio_button_unchecked</span>
+<div>
+<p class="text-xs font-medium text-on-surface">Arrival &amp; Clean up starts</p>
+<p class="text-[11px] text-on-surface-variant">Estimated 8:52 AM</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md active:scale-95 transition-transform cursor-pointer mt-1" onclick="document.getElementById('tracking-modal').classList.add('hidden'); document.getElementById('tracking-modal').classList.remove('flex');">
+      Done Tracking
+    </button>
+</div>
+</div>
+<!-- Interactive Global Feedback Toast -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 bg-primary/95 text-on-primary px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2 pointer-events-none transition-all duration-300 opacity-0 translate-y-3" id="toast">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]" id="toast-icon">check_circle</span>
+<span class="font-label-md text-xs" id="toast-msg">Action updated</span>
+</div>
+<script>
+  // Toast Helper
+  let toastTimer = null;
+  function showToast(msg, icon = 'check_circle') {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    const toastIcon = document.getElementById('toast-icon');
+    if (!toast) return;
+    toastMsg.textContent = msg;
+    toastIcon.textContent = icon;
+    toast.classList.remove('opacity-0', 'translate-y-3');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-3');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2400);
+  }
+
+  // 1. Bottom Navigation Tabs Interactive Switch
+  const navTabs = document.querySelectorAll('.nav-tab');
+  navTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      navTabs.forEach(t => {
+        t.classList.remove('text-secondary', 'font-semibold');
+        t.classList.add('text-on-surface-variant');
+        t.removeAttribute('aria-current');
+      });
+      tab.classList.add('text-secondary', 'font-semibold');
+      tab.classList.remove('text-on-surface-variant');
+      tab.setAttribute('aria-current', 'page');
+      
+      const tabName = tab.getAttribute('data-name');
+      showToast(`Switched to ${tabName} View`, 'tab');
+    });
+  });
+
+  // 2. Hero CTA Button
+  const heroBtn = document.getElementById('hero-cleanup-btn');
+  const heroBtnText = document.getElementById('hero-btn-text');
+  heroBtn.addEventListener('click', () => {
+    heroBtnText.textContent = 'Opening Request Form...';
+    showToast('Starting Cleanup Request wizard...', 'auto_awesome');
+    setTimeout(() => {
+      heroBtnText.textContent = 'Request a Cleanup';
+    }, 1200);
+  });
+
+  // 3. Category Grid Select / Toggle
+  const catCards = document.querySelectorAll('.cat-card');
+  catCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const isSelected = card.classList.contains('border-secondary');
+      catCards.forEach(c => {
+        c.classList.remove('border-secondary', 'bg-secondary-container/20', 'ring-2', 'ring-secondary/20');
+        c.classList.add('border-transparent', 'bg-surface-container-lowest');
+      });
+      if (!isSelected) {
+        card.classList.remove('border-transparent', 'bg-surface-container-lowest');
+        card.classList.add('border-secondary', 'bg-secondary-container/20', 'ring-2', 'ring-secondary/20');
+        const catName = card.getAttribute('data-cat');
+        showToast(`Category selected: ${catName}`, 'category');
+      }
+    });
+  });
+
+  // 4. Live Dispatch 'Track Status' Modal Drawer
+  const trackBtn = document.getElementById('btn-track-status');
+  const trackingModal = document.getElementById('tracking-modal');
+  const closeTrackingBtn = document.getElementById('close-tracking-btn');
+
+  trackBtn.addEventListener('click', () => {
+    trackingModal.classList.remove('hidden');
+    trackingModal.classList.add('flex');
+  });
+
+  closeTrackingBtn.addEventListener('click', () => {
+    trackingModal.classList.add('hidden');
+    trackingModal.classList.remove('flex');
+  });
+
+  trackingModal.addEventListener('click', (e) => {
+    if (e.target === trackingModal) {
+      trackingModal.classList.add('hidden');
+      trackingModal.classList.remove('flex');
+    }
+  });
+
+  // 5. 'Offer Job' Buttons on Cleaners
+  const offerBtns = document.querySelectorAll('.btn-offer-job');
+  offerBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const name = btn.getAttribute('data-name');
+      const origText = btn.textContent;
+      btn.textContent = 'Offered!';
+      btn.classList.add('bg-secondary', 'text-on-secondary');
+      showToast(`Job offer dispatched to ${name}!`, 'send');
+      setTimeout(() => {
+        btn.textContent = origText;
+        btn.classList.remove('bg-secondary', 'text-on-secondary');
+      }, 2000);
+    });
+  });
+
+  // 6. Location Chip 'Change' Interactive Dropdown
+  const changeLocBtn = document.getElementById('btn-change-location');
+  const locPicker = document.getElementById('location-picker');
+  const closeLocBtn = document.getElementById('close-location-picker');
+  const activeAddr = document.getElementById('active-address-text');
+  const headerLoc = document.getElementById('current-location-text');
+
+  changeLocBtn.addEventListener('click', () => {
+    locPicker.classList.toggle('hidden');
+  });
+
+  closeLocBtn.addEventListener('click', () => {
+    locPicker.classList.add('hidden');
+  });
+
+  const locOptions = document.querySelectorAll('.loc-opt');
+  locOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const newLoc = opt.getAttribute('data-loc');
+      activeAddr.textContent = newLoc;
+      headerLoc.textContent = newLoc.split(',')[0] + ', Cebu City';
+      locPicker.classList.add('hidden');
+      showToast(`Location set: ${newLoc}`, 'location_on');
+    });
+  });
+
+  // 7. Notification Bell & Avatar Popover
+  const notifBtn = document.getElementById('btn-notifications');
+  const notifPopover = document.getElementById('notifications-popover');
+  const bellDot = document.getElementById('bell-dot');
+  const dismissBtn = document.getElementById('dismiss-notifications-btn');
+
+  notifBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    avatarPopover.classList.add('hidden');
+    notifPopover.classList.toggle('hidden');
+    notifPopover.classList.toggle('flex');
+  });
+
+  dismissBtn.addEventListener('click', () => {
+    bellDot.classList.add('hidden');
+    notifPopover.classList.add('hidden');
+    notifPopover.classList.remove('flex');
+    showToast('Notifications marked as read');
+  });
+
+  const avatarBtn = document.getElementById('btn-avatar');
+  const avatarPopover = document.getElementById('avatar-popover');
+
+  avatarBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    notifPopover.classList.add('hidden');
+    notifPopover.classList.remove('flex');
+    avatarPopover.classList.toggle('hidden');
+    avatarPopover.classList.toggle('flex');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!notifBtn.contains(e.target) && !notifPopover.contains(e.target)) {
+      notifPopover.classList.add('hidden');
+      notifPopover.classList.remove('flex');
+    }
+    if (!avatarBtn.contains(e.target) && !avatarPopover.contains(e.target)) {
+      avatarPopover.classList.add('hidden');
+      avatarPopover.classList.remove('flex');
+    }
+  });
+
+  // Quick alert and explore buttons
+  document.getElementById('quick-alert-btn').addEventListener('click', () => {
+    showToast('No emergency alerts in Mambaling right now', 'notifications_active');
+  });
+  document.getElementById('btn-explore-all').addEventListener('click', () => {
+    showToast('Viewing all 18 Cebu sanitation services', 'grid_view');
+  });
+  document.getElementById('btn-map-toggle').addEventListener('click', () => {
+    showToast('Loading Mambaling & Basak live map...', 'map');
+  });
+</script>
+<script src="../shared/app.js"></script>
+<script src="../shared/requests-extra.js"></script>
+</body></html>
